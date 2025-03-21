@@ -1,0 +1,16 @@
+name: Amnesia
+on: workflow_dispatch
+
+env:
+  NAME: Cyril
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dis bonjour
+        if: ${( en.NAME != 'Cyril')}
+        run: echo "Vous n'etes pas Cyril"
+      - name: Hi Cyril
+        if: ${( env.NAME == 'Cyril')}
+        run: echo "Salut $NAME, ravi de vous revoir"
