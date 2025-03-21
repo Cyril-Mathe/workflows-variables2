@@ -1,4 +1,4 @@
-name: Amnesia
+name: Amnesia2
 on: workflow_dispatch
 
 env:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dis bonjour
-        if: ${{ en.NAME != 'Cyril'}}
+        if: ${{ env.NAME != 'Cyril'}}
         run: echo "Vous n'etes pas Cyril"
       - name: Hi Cyril
         if: ${{ env.NAME == 'Cyril'}}
